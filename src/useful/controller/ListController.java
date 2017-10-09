@@ -3,16 +3,19 @@ package useful.controller;
 import java.util.List;
 import java.util.ArrayList;
 import useful.model.Donut; //Must import as its from a different package.
+import useful.model.IceCream;
 import useful.view.PopupDisplay;
 
-public class ToolController
+public class ListController
 {
 	private List<Donut> donutList; //makes a list
+	private List<IceCream> creamList;
 	private PopupDisplay display;
 	
-	public ToolController()
+	public ListController()
 	{
 		donutList = new ArrayList<Donut>(); //instantiates a list
+		creamList = new ArrayList<IceCream>();
 		display = new PopupDisplay();
 	}
 	
@@ -24,6 +27,8 @@ public class ToolController
 		fillTheList();
 //		showTheList();
 		changeTheList();
+		creamFill();
+		creamChange();
 	}
 	
 	private void showTheList()
@@ -74,5 +79,36 @@ public class ToolController
 		display.displayText("The list is still " + donutList.size() + " items.");
 		removed = donutList.set(3, new Donut());
 		display.displayText("The donut with flavor " + removed.getFlavor() + " has been removed.");
+	}
+	
+	private void creamFill()
+	{
+		IceCream plainBasic = new IceCream("Vanilla");
+		IceCream chocoSyrup = new IceCream("Chocolate", true, "Chocolate");
+		IceCream thinJulius = new IceCream("Orange", "Vanilla", true, false);
+		IceCream scoopmania = new IceCream("Chocolate, Orange and Vanilla", "Vanilla and Chocolate", true, true, 15);
+		
+		creamList.add(plainBasic);
+		creamList.add(chocoSyrup);
+		creamList.add(thinJulius);
+		creamList.add(scoopmania);
+	}
+	
+	private void creamChange()
+	{
+		IceCream popped = creamList.remove(0);
+		display.displayText(popped.getCreamFlavor() + " was removed.");
+		creamList.add(3, popped);
+		display.displayText("Option 2: " + creamList.get(2));
+	}
+	
+	public ArrayList<Donut> getDonutList()
+	{
+		return (ArrayList<Donut>) donutList;
+	}
+	
+	public PopupDisplay getDisplay()
+	{
+		return display;
 	}
 }

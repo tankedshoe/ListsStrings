@@ -10,7 +10,7 @@ public class ToolRunner
 	public static void main(String[] args)
 	{
 		//() calls something.
-		ToolController myApp = new ToolController();
+		ListController myApp = new ListController();
 		myApp.start();
 		
 	}
