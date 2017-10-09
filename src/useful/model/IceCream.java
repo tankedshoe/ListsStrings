@@ -19,7 +19,7 @@ public class IceCream
 	
 	public String toString()
 	{
-		String desc = "This Ice Cream is " + creamFlavor + "flavored, it is " + hasSyrup + " that it has syrup, it is " + isThick + "that it is thick, and it has " + scoops + "scoops.";
+		String desc = "This Ice Cream is " + creamFlavor + " flavored, it is " + hasSyrup + " that it has syrup, it is " + isThick + " that it is thick, and it has " + scoops + " scoops.";
 		
 		return desc;
 	}

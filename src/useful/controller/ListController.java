@@ -100,6 +100,12 @@ public class ListController
 		display.displayText(popped.getCreamFlavor() + " was removed.");
 		creamList.add(3, popped);
 		display.displayText("Option 2: " + creamList.get(2));
+		creamList.add(new IceCream("Grape"));
+		display.displayText("Here are all of the options...");
+		for (int index = 0; index < donutList.size(); index += 1)
+		{
+			display.displayText("" + creamList.get(index));
+		}
 	}
 	
 	public ArrayList<Donut> getDonutList()
